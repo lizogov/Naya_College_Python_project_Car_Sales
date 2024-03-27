@@ -112,7 +112,7 @@ class Utils():
             top3_cars = df_dealer['Company_Model'].value_counts().nlargest(3)
 
             # Plot the sales of the top 3 car models sold by the current dealer
-            top3_cars.plot(kind='bar', title=f'Top {top_dealer} Cars Sold by {dealer}')
+            top3_cars.plot(kind='bar', title=f'Top 3 Cars Sold by {dealer}')
             plt.xlabel('Car')
             plt.ylabel('Number of Cars Sold')
             plt.savefig(f"images/top3_cars_by_{dealer}.png")
