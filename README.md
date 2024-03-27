@@ -8,9 +8,4 @@ The main file of this project is `Project.ipynb`. This Jupyter notebook contains
 
 ## Getting Started
 
-To get started with this project, clone this repository to your local machine and install the required dependencies.
-
-```bash
-git clone https://github.com/lizogov/Naya_College_Python_project_Car_Sales.git
-cd Naya_College_Python_project_Car_Sales
-pip install -r requirements.txt
+To run the project on a remote machine just enter the following ([link](https://colab.research.google.com/drive/1LUDdJ1Bx7n_rN0vu0aGXzB6y2uEtlIbt?usp=sharing)) and run the first line
