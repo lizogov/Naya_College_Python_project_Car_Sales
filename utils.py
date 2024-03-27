@@ -3,13 +3,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 import plotly.graph_objects as go
-
+import os
 class Utils():
     def __init__(self):
         pass
 
     def get_data(self):
-        df = pd.read_csv('Naya_College_Python_project_Car_Sales/cars.csv',encoding='UTF-16',sep=',')
+        path1 = 'Naya_College_Python_project_Car_Sales/cars.csv'
+        path2 = 'cars.csv'
+        if os.path.isfile(path1):
+            df = pd.read_csv(path1, encoding='UTF-16', sep=',')
+            print(f"File loaded from path: {path1}")
+        elif os.path.isfile(path2):
+            df = pd.read_csv(path2, encoding='UTF-16', sep=',')
+            print(f"File loaded from path: {path2}")
+        else:
+            print("File not found in both paths.")
+
         print(df.head(10))  # Print the first 5 rows of the dataframe
         df.info()  # Get a concise summary of the dataframe
         df.describe()  # Generate descriptive statistics of the dataframe
@@ -84,6 +94,10 @@ class Utils():
 
     def get_top_dealers(self, df, top_dealer):
         # Filter the dataset to include only new cars
+        dir1 = 'images'
+        if not os.path.isdir(dir1):
+            os.makedirs(dir1)
+            print(f"Directory {dir1} created.")
         new_cars_data = df[df['Status'] == 'New']
 
         # Find the top 5 dealers with the most new car sales
