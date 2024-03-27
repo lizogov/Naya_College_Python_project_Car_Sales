@@ -7,16 +7,16 @@ def run_all(year,top_dealer,top_brands):
     data = utl.data_manipulation(utl.get_data())
     utl.save_to_file(data)
     utl.print_info(data)
-    utl.get_top_by_brands(data, top_brand=3)
+    utl.get_top_by_brands(data, top_brands)
     utl.get_count_by_years(data)
-    utl.get_top_dealers(data, top_dealer=5)
+    utl.get_top_dealers(data, top_dealer)
     utl.avg_price_by_year(data)
     utl.price_distribution(data)
     utl.avg_mileage_by_model(data)
     utl.avg_price_by_dealer(data)
     utl.budget_segments(data)
     utl.get_top20cars(data)
-    utl.get_total_sales_by_year(data, year=2022)
+    utl.get_total_sales_by_year(data, year)
 
 
 

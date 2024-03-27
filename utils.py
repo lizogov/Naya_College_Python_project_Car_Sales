@@ -70,13 +70,13 @@ class Utils():
         print("The maximum price of the car = {}".format(max_price))
 
 
-    def get_top_by_brands(self, df, top_brand):
+    def get_top_by_brands(self, df, top_brands):
         # Create a new column 'Company_Model' in the DataFrame 'df' by combining 'Brand' and 'Model' columns
         df['Company_Model'] = df['Brand'] + " " + df['Model']
 
         # Group the DataFrame by 'Brand', then for each group, count the occurrences of each 'Company_Model'
         # Select the top 3 most frequent 'Company_Model' for each 'Brand'
-        top_models = df.groupby('Brand')['Company_Model'].apply(lambda x: x.value_counts().nlargest(top_brand))
+        top_models = df.groupby('Brand')['Company_Model'].apply(lambda x: x.value_counts().nlargest(top_brands))
 
         # Display the 'top3_models' Series
         return top_models
