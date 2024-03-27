@@ -9,7 +9,7 @@ class Utils():
         pass
 
     def get_data(self):
-        df = pd.read_csv('cars.csv',encoding='UTF-16',sep=',')
+        df = pd.read_csv('Naya_College_Python_project_Car_Sales/cars.csv',encoding='UTF-16',sep=',')
         print(df.head(10))  # Print the first 5 rows of the dataframe
         df.info()  # Get a concise summary of the dataframe
         df.describe()  # Generate descriptive statistics of the dataframe
